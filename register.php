@@ -84,11 +84,11 @@
             if (mysqli_num_rows($result) == 0) {
                 $verification_code = substr(md5(uniqid(rand(), true)), 0, 8);
                 $to = $email;
-                $google_email = "shuhaoys@gmail.com";
-                $google_password = "dskyggnplykwixgt";
+                $google_email = "";
+                $google_password = "";
                 $subject = "=?UTF-8?B?" . base64_encode("电子邮件验证"). "?=";
-                $message = "请单击以下链接以验证您的电子邮件: http://8.222.147.252/verify.php?email=$email&code=$verification_code";
-                $from = "shuhaoys@gmail.com";
+                $message = "请单击以下链接以验证您的电子邮件: http://X.X.X.X/verify.php?email=$email&code=$verification_code";
+                $from = "";
                 $headers = "From: $fromrn";
                 $headers .= "Reply-To: $fromrn";
                 $headers .= "MIME-Version: 1.0rn";
@@ -100,8 +100,8 @@
                 $mail->isSMTP();
                 $mail->SMTPDebug = 0;
                 $mail->SMTPSecure = 'tls';
-                $mail->Host = 'smtp.gmail.com';
-                $mail->Port = 587;
+                $mail->Host = 'smtp.xxx.com';
+                $mail->Port = XXX;
                 $mail->SMTPAuth = true;
                 $mail->Username = $google_email;
                 $mail->Password = $google_password;
